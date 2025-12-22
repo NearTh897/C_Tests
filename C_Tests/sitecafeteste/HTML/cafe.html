@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café & Aroma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Rancho, cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #d8d8d8;
+            color: #333;
+        }
+
+        header {
+            background-color: #6F4E37;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: '', "Rancho", "cursive";
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        header p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+         .destaque-marrom {
+          background-color: #5C4033;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 5px;
+         font-weight: bold;
+}
+        
+        nav {
+            background-color: #5C4033;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        h2 {
+            color: #6F4E37;
+        }
+
+        .servicos, .galeria {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .servico, .galeria img {
+            width: 50%;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .galeria img {
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #5C4033;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+         #serviços {
+            text-align: center;
+         }
+
+        .servico {
+            display: inline-block;
+            width: 60%;
+            margin: 10px;
+            text-align: center;
+
+            
+        }
+
+        .sobre {
+            display: inline-block;
+            width: 70%;
+            margin: 20px;
+            text-align: start;
+
+        }
+
+        .cabecalho-container{
+            display: flex;
+            justify-self: space-between;
+            align-items: center;
+
+        }
+
+        #relogio{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5em;
+            background-color: #6F4E37;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1><b>Café & Aroma</b></h1>
+        <p><span class="destaque-marrom">Sua pausa perfeita para um café de qualidade.</span></p>
+        <span class=""></span>
+        
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre">
+<div class="galeria">
+    <h2>Sobre Nós</h2>
+        <img src="https://th.bing.com/th/id/R.8d5a1a7e6f22538b286e4f9862f04ce1?rik=MyFw3lwXEGYxbA&pid=ImgRaw&r=0">                 
+        <p>Bem-vindo à <strong>Café & Aroma</strong>, onde cada xícara de café é preparada com paixão e dedicação. Desde 2025, oferecemos os melhores grãos de café, torrados artesanalmente, para proporcionar uma experiência única aos nossos clientes.</p>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos">
+            <div class="servico">
+                <h3>Café Especial</h3>
+                
+                <p>Grãos selecionados de diversas regiões do mundo.</p>
+            </div>
+            <div class="servico">
+                <h3>Workshops</h3>
+                <p>Aprenda a preparar o café perfeito com nossos baristas.</p>
+            </div>
+            <div class="servico">
+                <h3>Eventos</h3>
+                <p>Organizamos degustações e eventos temáticos.</p>
+                <div>
+                    <div class="servico">
+                        <h3>Cafés Tradicionais</h3>
+                        <p>Cafézinho de qualidade com um preço incrível</p>
+            </div>
+        </div>
+    </section>
+
+    <!--relogio -->
+    <header>
+        <div class="cabecalho-container"
+         class="logo-titulo">
+        <img src="logo.png" alt="logo" class="logo"
+        h1>Cafe % Aroma</h1>
+        </div>
+        <div id="relogio"></div>
+        </div>
+        <p class="slogan">ppp</p>
+    </header>
+
+    <!-- Seção Galeria -->
+    <section id="galeria">
+        <h2>Galeria</h2>
+        <div class="galeria">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Café 1">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Café 2">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Café 3">
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Estamos sempre prontos para atendê-lo. Entre em contato conosco:</p>
+        <p><strong>Email:</strong> contato@cafeearoma.com</p>
+        <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        <p><strong>Endereço:</strong> Rua do Café, 123 - São Paulo, SP</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Café & Aroma. Todos os direitos reservados.</p>
+    </footer>
+
+    <!--script do relogio-->
+    <script>
+        function atualizarRelogio(){
+            const agora = new Date ();
+            const opcoes = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+        };
+        document.getElementById(atualizarRelogio).textContent =
+        agora.toLocaleTimeString(pt-BR, opcoes);
+    }
+
+setInterval(atualizarRelogio, 1000);
+
+atualizarRelogio();
+
+    </script>
+</body>
+</html>
