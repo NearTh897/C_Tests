@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+//┌────────────────────────────────────────┐
+//│ 1. Sistema Operacional recebe o pedido │
+//│ 2. Verifica se o arquivo existe        │
+//│ 3. Cria uma "ponte" (FILE*) para acesso│
+//│ 4. Retorna um número interno           │
+//│ 5. Prepara o buffer de leitura         │
+//└────────────────────────────────────────┘
+
+
+
 void lerJSON() {
     FILE *arquivo = fopen("dados.json", "r");
     
