@@ -2,14 +2,81 @@
 #include <stdlib.h>
 #include <string.h>
 
-//┌────────────────────────────────────────┐
-//│ 1. Sistema Operacional recebe o pedido │
-//│ 2. Verifica se o arquivo existe        │
-//│ 3. Cria uma "ponte" (FILE*) para acesso│
-//│ 4. Retorna um número interno           │
-//│ 5. Prepara o buffer de leitura         │
-//└────────────────────────────────────────┘
 
+
+//┌────────────────────────────────────────┐
+//│ 1. Sistema Operacional recebe o pedido |
+//│ 2. Recebe a decisão do usuario         |
+//│ 3. Verifica se o arquivo existe        │
+//│ 4. Cria uma "ponte" (FILE*) para acesso│
+//│ 5. Retorna um número interno           │
+//│ 6. Prepara o buffer de leitura         │
+//└────────────────────────────────────────┘
+    // Variáveis para os dados lidos
+    int matricula_lida;
+    int opcao;
+    char nome_lido[50]; 
+    float nota_lida;
+
+void menu(){
+    printf("===================================\n");
+    printf("||         MENU PRINCIPAL        ||\n");
+    printf("===================================\n");
+    printf("||                               ||\n");
+    printf("||  1 - CADASTRAR                ||\n");
+    printf("||  2 - LER                      ||\n");
+    printf("||  3 - SAIR                     ||\n");
+    printf("===================================\n");
+    printf("Escolha a opção desejada: ");
+    scanf("%d", &opcao);
+    switch (opcao) {
+        case 1:
+            cadastrarJSON();
+            break;
+        case 2:
+            lerJSON();
+            break;
+        case 3:
+            printf("Saindo do programa...\n");
+            break;
+        default:
+            printf("Opção inválida! Tente novamente.\n");
+    }
+}
+
+void cadastrarJSON(){
+    FILE *arquivo = fopen("dados.json", "w");
+    
+    if (arquivo == NULL) {
+        printf("Erro ao criar o arquivo dados.json!\n");
+        return;
+    }
+
+    int matricula;
+    char nome[50];
+    float nota;
+    
+    printf("Digite a matrícula: ");
+    scanf("%d", &matricula);
+    
+    printf("Digite o nome: ");
+    getchar(); // Limpa o buffer do teclado
+    fgets(nome, sizeof(nome), stdin);
+    nome[strcspn(nome, "\n")] = '\0'; // Remove a nova linha
+    
+    printf("Digite a nota: ");
+    scanf("%f", &nota);
+    
+    fprintf(arquivo, "{\n");
+    fprintf(arquivo, "  \"matricula\": %d,\n", matricula);
+    fprintf(arquivo, "  \"nome\": \"%s\",\n", nome);
+    fprintf(arquivo, "  \"nota\": %.2f\n", nota);
+    fprintf(arquivo, "}\n");
+    
+    fclose(arquivo);
+    
+    printf("Dados salvos com sucesso em dados.json!\n");
+}
 
 
 void lerJSON() {
@@ -21,10 +88,6 @@ void lerJSON() {
         return;
     }
     
-    // Variáveis para os dados lidos
-    int matricula_lida;
-    char nome_lido[50]; 
-    float nota_lida;
     
     char linha[200];  // Buffer 
     
@@ -58,6 +121,6 @@ void lerJSON() {
 }
 
 int main() {
-    lerJSON();
+    menu();
     return 0;
 }
