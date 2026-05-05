@@ -19,7 +19,7 @@
     float nota_lida;
 
 void menu(){
-    printf("===================================\n");
+    printf("===================================\n"); 
     printf("||         MENU PRINCIPAL        ||\n");
     printf("===================================\n");
     printf("||                               ||\n");
@@ -31,10 +31,10 @@ void menu(){
     scanf("%d", &opcao);
     switch (opcao) {
         case 1:
-            cadastrarJSON();
+            cadastrarCSV();
             break;
         case 2:
-            lerJSON();
+            lerCSV();
             break;
         case 3:
             printf("Saindo do programa...\n");
@@ -44,11 +44,11 @@ void menu(){
     }
 }
 
-void cadastrarJSON(){
-    FILE *arquivo = fopen("dados.json", "w");
+void cadastrarCSV(){
+    FILE *arquivo = fopen("dados.CSV", "w");
     
     if (arquivo == NULL) {
-        printf("Erro ao criar o arquivo dados.json!\n");
+        printf("Erro ao criar o arquivo dados.CSV!\n");
         return;
     }
 
@@ -75,15 +75,15 @@ void cadastrarJSON(){
     
     fclose(arquivo);
     
-    printf("Dados salvos com sucesso em dados.json!\n");
+    printf("Dados salvos com sucesso em dados.CSV!\n");
 }
 
 
-void lerJSON() {
-    FILE *arquivo = fopen("dados.json", "r");
+void lerCSV() {
+    FILE *arquivo = fopen("dados.CSV", "r");
     
     if (arquivo == NULL) {
-        printf("Arquivo dados.json não encontrado!\n");
+        printf("Arquivo dados.CSV não encontrado!\n");
         printf("Execute o exemplo 1 primeiro para criar o arquivo.\n");
         return;
     }
@@ -114,7 +114,7 @@ void lerJSON() {
     
     fclose(arquivo);
     
-    printf("\n--- Dados recuperados do JSON ---\n");
+    printf("\n--- Dados recuperados do CSV ---\n");
     printf("Matrícula: %d\n", matricula_lida);
     printf("Nome: %s\n", nome_lido);
     printf("Nota: %.2f\n", nota_lida);

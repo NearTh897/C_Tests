@@ -1,1 +1,5 @@
-matricula,nome,nota
+{
+  "matricula": 1234,
+  "nome": "theo",
+  "nota": 7.00
+}
