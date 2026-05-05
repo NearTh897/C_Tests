@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
 //┌────────────────────────────────────────┐
 //│ 1. Sistema Operacional recebe o pedido |
 //│ 2. Recebe a decisão do usuario         |
