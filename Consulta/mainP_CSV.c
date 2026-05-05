@@ -17,14 +17,14 @@
     float nota_lida;
 
 void menu(){
-    printf("===================================\n"); 
-    printf("||         MENU PRINCIPAL        ||\n");
-    printf("===================================\n");
-    printf("||                               ||\n");
-    printf("||  1 - CADASTRAR                ||\n");
-    printf("||  2 - LER                      ||\n");
-    printf("||  3 - SAIR                     ||\n");
-    printf("===================================\n");
+    printf("#################################\n"); 
+    printf("#         MENU PRINCIPAL        #\n");
+    printf("#################################\n");
+    printf("#                               #\n");
+    printf("#  1 - CADASTRAR                #\n");
+    printf("#  2 - LER                      #\n");
+    printf("#  3 - SAIR                     #\n");
+    printf("#################################\n");
     printf("Escolha a opção desejada: ");
     scanf("%d", &opcao);
     switch (opcao) {
