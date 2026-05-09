@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
+#define MAX 50 //const MAX=50;
+
 
 //┌────────────────────────────────────────┐
 //│ 1. Sistema Operacional recebe o pedido |
@@ -11,10 +15,14 @@
 //│ 6. Prepara o buffer de leitura         │
 //└────────────────────────────────────────┘
     // Variáveis para os dados lidos
+    int op=0, idg=0, idc =0;
+
     int matricula_lida;
     int opcao;
-    char nome_lido[50]; 
+    char nome_lido[MAX]; 
     float nota_lida;
+
+
 
 void menu(){
     printf("#################################\n"); 
@@ -22,8 +30,10 @@ void menu(){
     printf("#################################\n");
     printf("#                               #\n");
     printf("#  1 - CADASTRAR                #\n");
-    printf("#  2 - LER                      #\n");
-    printf("#  3 - SAIR                     #\n");
+    printf("#  2 - CONSULTAR                #\n");
+    printf("#  3 - REMOVER                  #\n");    
+    printf("#  4 - LER                      #\n");
+    printf("#  5 - SAIR                     #\n");
     printf("#################################\n");
     printf("Escolha a opção desejada: ");
     scanf("%d", &opcao);
@@ -32,9 +42,15 @@ void menu(){
             cadastrarCSV();
             break;
         case 2:
-            lerCSV();
+            consultarCSV();
             break;
         case 3:
+            removerCSV();
+            break;
+        case 4:
+            lerCSV();
+            break;
+        case 5:
             printf("Saindo do programa...\n");
             break;
         default:
@@ -43,7 +59,8 @@ void menu(){
 }
 
 void cadastrarCSV(){
-    FILE *arquivo = fopen("dados.CSV", "w");
+    FILE *arquivo = fopen("dados.CSV", "a"); // Abre o arquivo para escrita (modo "append")
+    
     
     if (arquivo == NULL) {
         printf("Erro ao criar o arquivo dados.CSV!\n");
@@ -51,7 +68,7 @@ void cadastrarCSV(){
     }
 
     int matricula;
-    char nome[50];
+    char nome[MAX];
     float nota;
     
     printf("Digite a matrícula: ");
@@ -74,6 +91,11 @@ void cadastrarCSV(){
     fclose(arquivo);
     
     printf("Dados salvos com sucesso em dados.CSV!\n");
+
+                    printf("\nDeseja continuar cadastrando [s/n]: ");
+        scanf(" %c",&r);
+    while((tolower(r)=='s')&&(idg<MAX));
+
 }
 
 
@@ -116,6 +138,14 @@ void lerCSV() {
     printf("Matrícula: %d\n", matricula_lida);
     printf("Nome: %s\n", nome_lido);
     printf("Nota: %.2f\n", nota_lida);
+}
+
+consultarCSV(){
+    printf("Função de consulta ainda não implementada.\n");
+}
+
+removerCSV(){
+    printf("Função de remoção ainda não implementada.\n");
 }
 
 int main() {

@@ -1,5 +1,35 @@
 {
+  "matricula": 1234,
+  "nome": "theo",
+  "nota": 6.00
+}
+{
   "matricula": 12345,
   "nome": "joao",
   "nota": 8.00
+}
+{
+  "matricula": 4321,
+  "nome": "pedro",
+  "nota": 7.00
+}
+{
+  "matricula": 7890,
+  "nome": "leo",
+  "nota": 8.00
+}
+{
+  "matricula": 7878,
+  "nome": "tt",
+  "nota": 3333.00
+}
+{
+  "matricula": 7777,
+  "nome": "pppp",
+  "nota": 5555.00
+}
+{
+  "matricula": 765896,
+  "nome": "bgfdgrte",
+  "nota": 45343.00
 }
