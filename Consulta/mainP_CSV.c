@@ -4,7 +4,12 @@
 #include <ctype.h>
 
 #define MAX 50 //const MAX=50;
+#define MAX_MAT 11 
 
+
+//FUnções pra criar: ler CSV e remover CSV
+// detalhes pra implementar: seguir formatação dos registros, melhorar o design e usabilidade
+// 
 
 //┌────────────────────────────────────────┐
 //│ 1. Sistema Operacional recebe o pedido |
@@ -17,10 +22,11 @@
     // Variáveis para os dados lidos
     int op=0, idg=0, idc =0;
 
-    int matricula_lida;
+    int matricula_lida[MAX_MAT];
     int opcao;
     char nome_lido[MAX]; 
     float nota_lida;
+    int r;
 
 
 
@@ -67,12 +73,12 @@ void cadastrarCSV(){
         return;
     }
 
-    int matricula;
+    int matricula[MAX_MAT];
     char nome[MAX];
     float nota;
     
     printf("Digite a matrícula: ");
-    scanf("%d", &matricula);
+    scanf("%d", &matricula[0]);
     
     printf("Digite o nome: ");
     getchar(); // Limpa o buffer do teclado
@@ -83,7 +89,7 @@ void cadastrarCSV(){
     scanf("%f", &nota);
     
     fprintf(arquivo, "{\n");
-    fprintf(arquivo, "  \"matricula\": %d,\n", matricula);
+    fprintf(arquivo, "  \"matricula\": %d,\n", matricula[0]);
     fprintf(arquivo, "  \"nome\": \"%s\",\n", nome);
     fprintf(arquivo, "  \"nota\": %.2f\n", nota);
     fprintf(arquivo, "}\n");
@@ -117,8 +123,8 @@ void lerCSV() {
         printf("Li: %s", linha);  
         
         if (strstr(linha, "matricula") != NULL) {
-            sscanf(linha, "  \"matricula\": %d,", &matricula_lida);
-            printf("  -> Mátrícula: %d\n", matricula_lida);
+            sscanf(linha, "  \"matricula\": %d,", &matricula_lida[0]);
+            printf("  -> Mátrícula: %d\n", matricula_lida[0]);
         }
         
         else if (strstr(linha, "nome") != NULL) {
@@ -135,7 +141,7 @@ void lerCSV() {
     fclose(arquivo);
     
     printf("\n--- Dados recuperados do CSV ---\n");
-    printf("Matrícula: %d\n", matricula_lida);
+    printf("Matrícula: %d\n", matricula_lida[0]);
     printf("Nome: %s\n", nome_lido);
     printf("Nota: %.2f\n", nota_lida);
 }
@@ -145,8 +151,13 @@ consultarCSV(){
 }
 
 removerCSV(){
-    printf("Função de remoção ainda não implementada.\n");
-}
+    FILE *arquivo = fopen("dados.CSV", "w");
+//só apaga o conteúdo do arquivo, era pra ser o cadastro específico
+        fclose(arquivo);   
+    }
+ //preciso refazer os dados pra essa função fazer sentido, 
+// criar uma struct pra armazenar os dados lidos do CSV e 
+// depois comparar a matrícula com o que o usuário quer remover
 
 int main() {
     menu();
